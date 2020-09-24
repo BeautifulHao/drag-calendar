@@ -9,7 +9,7 @@
 }
 
 .calendar-week-warp {
-    height: 46px;
+    height: 54px;
     width: 710px;
     margin: 0 auto;
     box-sizing: border-box;
@@ -52,7 +52,7 @@
     position: relative;
     height: 1441px;
     width: 631px;
-    background: url(./grid.svg);
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPiAgICAKPGRlZnM+ICAgICAgICAKPHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI5MCIgaGVpZ2h0PSIxNSIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+ICAgICAgICAgICAgCjxwYXRoIGQ9Ik0gOTAgMCBMIDAgMCAwIDE1IiBmaWxsPSJub25lIiBzdHJva2U9IiNkZGRkZGQiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMSIgLz4gICAgICAgIAo8L3BhdHRlcm4+ICAgIAo8L2RlZnM+ICAgIAo8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIiAvPjwvc3ZnPg==);
     margin-left: 60px;
 
     .calendar-timebox {
