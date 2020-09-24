@@ -1,6 +1,6 @@
 import React, { useState, useEffect, MouseEvent } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faWindowClose } from '@fortawesome/free-solid-svg-icons'
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 import moment from "moment";
 
 export type TimeBoxType = {
@@ -176,7 +176,7 @@ export const TimeBox: React.FC<TimeBoxProps> = (props) => {
             <FontAwesomeIcon
                 style={{ color: "#FA5858" }}
                 className="calendar-timebox-close"
-                icon={faWindowClose}
+                icon={faTimesCircle}
                 onClick={CloseHander}
             ></FontAwesomeIcon>
             <div className="calendar-timebox-resize" onMouseDown={ResizeHander}></div>
