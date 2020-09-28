@@ -2,8 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import TimeBox from "./TimeBox";
 import { TimeBoxType } from './TimeBox'
 
-let beginKey: number = new Date().valueOf();
-
 type common = {
     [key: string]: number
 }
@@ -53,18 +51,23 @@ export type TimeBoxObjectWrap = {
 }
 
 export interface CalendarProps {
-    fetchCalendarData: () => Promise<TimeBoxObjectWrap>
+    fetchCalendarData: () => Promise<TimeBoxObjectWrap>;
+    onCalendarChange: (calendar: TimeBoxType[]) => void;
 }
 
 export const Calendar: React.FC<CalendarProps> = (props) => {
-    const { fetchCalendarData } = props
+    const { fetchCalendarData, onCalendarChange } = props
     const [calendar, setCalendar] = useState<TimeBoxType[]>([]);
     const modelRef = useRef<HTMLDivElement>(null);
+    const hasInit = useRef<boolean>(false);
+    let beginKey: number = new Date().valueOf();
+
 
     useEffect(() => {
         fetchCalendarData().then((res) => {
             const { data: calendarList } = res;
             setCalendar(calendarList);
+            hasInit.current = true;
 
             if (calendarList && calendarList.length > 0) {
                 let minTopItem = { ...calendarList[0] };
@@ -77,6 +80,12 @@ export const Calendar: React.FC<CalendarProps> = (props) => {
             }
         });
     }, [fetchCalendarData]);
+
+    useEffect(() => {
+        if (hasInit.current===true && onCalendarChange) {
+            onCalendarChange(calendar)
+        }
+    }, [calendar, onCalendarChange])
 
     const moveScroll = (value: number) => {
         value = value < 0 ? 0 : value;
@@ -255,6 +264,7 @@ export const Calendar: React.FC<CalendarProps> = (props) => {
         const height = gap >= 60 ? 60 : gap;
         const tail = top + height;
         const unique = beginKey++;
+        console.log(unique)
 
         let addTime: TimeBoxType = {
             top, height, dayIndex, tail, unique

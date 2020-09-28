@@ -177,4 +177,4 @@ const Template: Story<CalendarProps> = (args: CalendarProps) => (<Calendar {...a
 
 export const DefaultCalendar = Template.bind({});
 
-DefaultCalendar.args = { fetchCalendarData: getInitData };
+DefaultCalendar.args = { fetchCalendarData: getInitData,onCalendarChange:(calendars)=>{console.log(calendars)} };
