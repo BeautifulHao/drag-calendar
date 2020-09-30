@@ -7,7 +7,7 @@ cache:
 env:
   - CI=true
 script:
-  - npm run doc
+  - npm run build-doc
 deploy:
   provider: pages
   skip_cleanup: true
