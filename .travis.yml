@@ -15,15 +15,3 @@ deploy:
   local_dir: storybook-static
   on:
     branch: master
-jobs:
-  include:
-    - stage: npm publish
-      node_js: 
-        - "stable"
-      script: yarn build
-      deploy:
-        provider: npm
-        email: "$npm_email"
-        api_key: "$npm_token"
-        on:
-          branch: master
