@@ -1,3 +1,4 @@
+![CI](https://www.travis-ci.com/BeautifulHao/drag-calendar.svg?branch=master)
 # 开源日历组件介绍
 
 在线演示地址：[Calendar](https://beautifulhao.github.io/drag-calendar/iframe.html?id=example-calendar--default-calendar&viewMode=story)
